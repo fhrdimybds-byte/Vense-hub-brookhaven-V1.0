@@ -3,15 +3,12 @@ local StarterGui = game:GetService("StarterGui")
 
 -- [ SCRIPT CONFIGURATION ]
 local Scripts = {
-    ["Brookhaven"] = {id = 4924922222, url = "https://raw.githubusercontent.com/fhrdimybds-byte/Vense-hub-brookhaven-Rp/refs/heads/main/Luau"},
-    ["You vs homer"] = {id = 111530421351096, url = "https://raw.githubusercontent.com/fhrdimybds-byte/Vense-hub-You-vs-homer/refs/heads/main/Luau"},
-    ["Murder Mystery 2"] = {id = 142823291, url = "https://raw.githubusercontent.com/fhrdimybds-byte/Vense-hub-/refs/heads/main/Lua"},
-    ["Natural Disaster Survival"] = {id = 189707, url = "https://raw.githubusercontent.com/fhrdimybds-byte/Vense-hub-Natural-Disaster-Survival/refs/heads/main/Lua"},
+    ["Brookhaven"] = {id = 4924922222, url = "https://raw.githubusercontent.com/fhrdimybds-byte/Vense-hub-brookhaven-Rp/refs/heads/main/Lua"},
 }
 
 -- [ SCRIPT UNIVERSAL ]
 -- This script will load if the current game is not in the list above.
-local UniversalScript = "https://raw.githubusercontent.com/fhrdimybds-byte/Vense-hub-Universal-script-/refs/heads/main/Lua"
+local UniversalScript = ""
 
 -- [ NOTIFICATION FUNCTION ]
 local function SendNotif(title, text, icon)
@@ -54,7 +51,7 @@ local function LoadGame()
         end
     else
         -- 3. If the game is NOT supported
-        SendNotif("Not Supported", "Game not in list. Loading Universal Script...", "rbxassetid://135619040309127")
+        SendNotif("Not Supported", "Game not in list. ", "rbxassetid://135619040309127")
         task.wait(1)
         
         local success, err = pcall(function()
@@ -62,10 +59,10 @@ local function LoadGame()
         end)
         
         if not success then
-            SendNotif("Error", "Failed to load Universal: " .. tostring(err))
+            print("hello world!")
         end
     end
 end
 
--- Start the Loader by smlie!
+-- Start the Loader
 LoadGame()
